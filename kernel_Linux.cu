@@ -12,7 +12,7 @@
 #include <thrust/copy.h>
 #include <thrust/random.h>
 
-#define MaxStringLen 16                    //Êµ¼Ê¿ÉÓÃ³¤¶È-1
+#define MaxStringLen 16                    //å®é™…å¯ç”¨é•¿åº¦-1
 #define KeyNum 3
 #define DataLine 7 
 //#define DataLine 262144 //1024 * 256
@@ -86,7 +86,7 @@ int main()
 	thrust::host_vector<long int> value_vector(DataLine);
 
 	FILE *fp;
-	fp = fopen(path, "r+");                            //path×ö¹¦ÄÜ²âÊÔ£¬path2×ö´óÁ¿Êı¾İ²âÊÔ
+	fp = fopen(path, "r+");                            //pathåšåŠŸèƒ½æµ‹è¯•ï¼Œpath2åšå¤§é‡æ•°æ®æµ‹è¯•
 	//fp = fopen(path2, "r+");
 	for (long int i = 0; i < DataLine; i++)
 	{
@@ -147,7 +147,7 @@ int main()
 	printf("\nGPU ElapsedTime: %.5f s\n", time);
 
 	//cudaFree(dkey_vector);
-	// Free vector memeory, ´´½¨ÁÙÊ±¿Õ¼äÒÔÊÍ·ÅÄÚ´æ
+	// Free vector memeory, åˆ›å»ºä¸´æ—¶ç©ºé—´ä»¥é‡Šæ”¾å†…å­˜
 	key_vector.clear();
 	value_vector.clear();
 	dkey_vector.clear();
