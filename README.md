@@ -6,6 +6,7 @@ By using cuda thrust lib, this programe can sort keys-value pairs with multiple 
 
 Enviroment:
 Operating System: Linux; GPU: Nvida Tesla K80.
+
 Performance:
 2 string keys, 1 int value, 1048576 rows of data
 Sorting time used: aboust 860ms.
