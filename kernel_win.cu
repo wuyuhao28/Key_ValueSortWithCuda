@@ -13,7 +13,7 @@
 #include <thrust/random.h>
 #include <thrust/device_ptr.h>
 
-#define MaxStringLen 16                    //Êµ¼Ê¿ÉÓÃ³¤¶È-1
+#define MaxStringLen 16                    //å®é™…å¯ç”¨é•¿åº¦-1
 #define KeyNum 2
 //#define DataLine 262144 //1024 * 256
 //#define DataLine 98304  //1024 * 96 
@@ -36,7 +36,7 @@ bool __device__ __host__ operator < (KeyString l, KeyString r)
 	{
 		for (long int i = 0; i < MaxStringLen; i++)
 		{
-			//if ( type[k] == 0 )           //×Ö·û´®±È½Ï
+			//if ( type[k] == 0 )           //å­—ç¬¦ä¸²æ¯”è¾ƒ
 			//{
 				if (l.key[k][i] == '\0' && r.key[k][i] == '\0')    //into next key
 				{
@@ -59,7 +59,7 @@ bool __device__ __host__ operator < (KeyString l, KeyString r)
 
 				return false;
 			//}
-			//if ( type[k] == 1 )                //ÕûĞÍ±È½Ï
+			//if ( type[k] == 1 )                //æ•´å‹æ¯”è¾ƒ
 			//{
 			//	long int li, ri;
 			//	li = atol(l.key[k]);
@@ -78,7 +78,7 @@ bool __device__ __host__ operator < (KeyString l, KeyString r)
 			//	if (li > ri)
 			//		return false;
 			//}
-			//if (type[k] == 2)                //¸¡µãĞÍ±È½Ï
+			//if (type[k] == 2)                //æµ®ç‚¹å‹æ¯”è¾ƒ
 			//{
 			//	float lf, rf;
 			//	lf = atof(l.key[k]);
@@ -131,7 +131,7 @@ int main()
 	//printf("vector.capacity(): %ld\n", key_vector.capacity());
 
 	FILE *fp;
-	//fp = fopen(path, "r+");                            //path×ö¹¦ÄÜ²âÊÔ£¬path2×ö´óÁ¿Êı¾İ²âÊÔ
+	//fp = fopen(path, "r+");                            //pathåšåŠŸèƒ½æµ‹è¯•ï¼Œpath2åšå¤§é‡æ•°æ®æµ‹è¯•
 	fp = fopen(path2, "r+");
 	for (long int i = 0; i < DataLine; i++)
 	{
@@ -195,7 +195,7 @@ int main()
 	printf("\nGPUElapsedTime: %.5f s\n", time);
 
 	//cudaFree(dkey_vector);
-	// Free vector memeory, ´´½¨ÁÙÊ±¿Õ¼äÒÔÊÍ·ÅÄÚ´æ
+	// Free vector memeory, åˆ›å»ºä¸´æ—¶ç©ºé—´ä»¥é‡Šæ”¾å†…å­˜
 	key_vector.clear();
 	value_vector.clear();
 	dkey_vector.clear();
